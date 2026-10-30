@@ -1,0 +1,29 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--bg-status);
+  color: var(--fg-status);
+}
+
+.primary:hover {
+  filter: brightness(1.12);
+}
+
+.secondary {
+  border-color: var(--border);
+  background: transparent;
+  color: var(--fg-primary);
+}
+
+.secondary:hover {
+  background: var(--bg-hover);
+}

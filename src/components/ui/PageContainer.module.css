@@ -1,0 +1,29 @@
+.page {
+  max-width: 78ch;
+  padding: 32px 28px 48px;
+}
+
+.title {
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--accent);
+}
+
+.page h2 {
+  margin: 32px 0 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent-warm);
+}
+
+.page p {
+  margin: 0 0 12px;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding: 24px 16px 40px;
+  }
+}

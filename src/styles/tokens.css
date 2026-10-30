@@ -1,0 +1,51 @@
+/* Cores e medidas do visual. Paleta PROVISÓRIA baseada nos temas padrão do VS Code
+   (Dark+ e Light+); será ajustada com as capturas da referência.
+   Nenhum componente usa cor fixa: tudo vem destas variáveis. */
+:root {
+  --font-mono: 'Cascadia Code', Consolas, 'SF Mono', Menlo, 'Liberation Mono', monospace;
+
+  --activity-w: 48px;
+  --sidebar-w: 250px;
+  --status-h: 24px;
+  --tab-h: 36px;
+
+  color-scheme: dark;
+  --bg-editor: #1e1e1e;
+  --bg-sidebar: #252526;
+  --bg-activity: #333333;
+  --bg-tab-bar: #252526;
+  --bg-tab: #2d2d2d;
+  --bg-hover: #2a2d2e;
+  --bg-selected: #37373d;
+  --bg-status: #007acc;
+  --fg-status: #ffffff;
+  --fg-primary: #d4d4d4;
+  --fg-muted: #9d9d9d;
+  --fg-activity: #858585;
+  --fg-activity-active: #ffffff;
+  --border: #3c3c3c;
+  --accent: #4fc1ff;
+  --accent-warm: #ce9178;
+  --focus: #3794ff;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg-editor: #ffffff;
+  --bg-sidebar: #f3f3f3;
+  --bg-activity: #2c2c2c;
+  --bg-tab-bar: #f3f3f3;
+  --bg-tab: #ececec;
+  --bg-hover: #e8e8e8;
+  --bg-selected: #e4e6f1;
+  --bg-status: #007acc;
+  --fg-status: #ffffff;
+  --fg-primary: #3b3b3b;
+  --fg-muted: #616161;
+  --fg-activity: #c5c5c5;
+  --fg-activity-active: #ffffff;
+  --border: #d4d4d4;
+  --accent: #0451a5;
+  --accent-warm: #b5481c;
+  --focus: #005fb8;
+}
