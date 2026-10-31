@@ -3,6 +3,7 @@
 Regra: registrar só o que aconteceu de fato. Campos entre [colchetes] são preenchidos pelo dono.
 
 ## 2026-10-22 — Bloco 1: moldura estilo VS Code
+
 - **Ferramenta:** Claude (chat). **Modelo:** [anotar o nome que aparece no seletor].
 - **Instruções usadas:** [anotar se o AGENTS.md foi colado no Project ou na conversa].
 - **O que a IA fez:** gerou os arquivos do Bloco 1 (barra de ícones, explorador, abas fecháveis, barra de status, tema claro/escuro, rotas básicas, 404) e a lógica testável das abas.

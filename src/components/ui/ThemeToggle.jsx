@@ -7,7 +7,13 @@ function ThemeToggle({ className, showLabel = false }) {
   const label = theme === 'dark' ? 'Mudar para o tema claro' : 'Mudar para o tema escuro'
 
   return (
-    <button type="button" className={className} onClick={toggleTheme} title={label} aria-label={label}>
+    <button
+      type="button"
+      className={className}
+      onClick={toggleTheme}
+      title={label}
+      aria-label={label}
+    >
       <Icon name={theme === 'dark' ? 'sun' : 'moon'} />
       {showLabel && <span>{theme === 'dark' ? 'Tema claro' : 'Tema escuro'}</span>}
     </button>
