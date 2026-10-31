@@ -37,7 +37,11 @@ function TabBar({ drawerOpen, onToggleDrawer }) {
                   if (event.button === 1) closeTab(path)
                 }}
               >
-                <Link to={path} className={styles.link} aria-current={isActive ? 'page' : undefined}>
+                <Link
+                  to={path}
+                  className={styles.link}
+                  aria-current={isActive ? 'page' : undefined}
+                >
                   <FileIcon ext={info.ext} />
                   <span>{info.file}</span>
                 </Link>

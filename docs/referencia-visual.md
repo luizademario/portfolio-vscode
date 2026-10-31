@@ -6,17 +6,17 @@ A área do hero tem um brilho radial; por isso o fundo varia (#24292e nas bordas
 
 ## Paleta escura medida
 
-| Elemento | Referência | Projeto hoje (Dark+) |
-|---|---|---|
-| Fundo do editor / aba ativa / breadcrumb | #24292e | #1e1e1e |
-| Explorador e faixa de abas | #1f2428 | #252526 |
-| Barra de ícones | #24292e | #333333 |
-| Barra de status | #24292e (escura, igual ao fundo) | #007acc (azul) |
-| Linha divisória (explorador/conteúdo) | #161a1d | #3c3c3c |
-| Destaque (botão principal, cargo, indicador ativo da barra de ícones) | #f9826c (coral) | #4fc1ff (azul) |
-| Botão secundário | #2f3236 | transparente com borda |
-| Texto principal | #efefef | #d4d4d4 |
-| Texto secundário | #9e9fa1 | #9d9d9d |
+| Elemento                                                              | Referência                       | Projeto hoje (Dark+)   |
+| --------------------------------------------------------------------- | -------------------------------- | ---------------------- |
+| Fundo do editor / aba ativa / breadcrumb                              | #24292e                          | #1e1e1e                |
+| Explorador e faixa de abas                                            | #1f2428                          | #252526                |
+| Barra de ícones                                                       | #24292e                          | #333333                |
+| Barra de status                                                       | #24292e (escura, igual ao fundo) | #007acc (azul)         |
+| Linha divisória (explorador/conteúdo)                                 | #161a1d                          | #3c3c3c                |
+| Destaque (botão principal, cargo, indicador ativo da barra de ícones) | #f9826c (coral)                  | #4fc1ff (azul)         |
+| Botão secundário                                                      | #2f3236                          | transparente com borda |
+| Texto principal                                                       | #efefef                          | #d4d4d4                |
+| Texto secundário                                                      | #9e9fa1                          | #9d9d9d                |
 
 Não dá para medir pela captura: cor de aba inativa, cor de hover, tema claro. Decidir ao ajustar.
 
