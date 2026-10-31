@@ -1,31 +1,26 @@
 # Contexto atual do projeto (para continuar em outra conversa)
 
 **Projeto:** portfólio CP3 (FIAP), React + Vite + JavaScript, visual VS Code. Entrega: 03/11/2026. Dono: iniciante, quer entender tudo.
-**Decisões aprovadas:** ver `docs/decisions.md`. **Regras para a IA:** ver `AGENTS.md`.
-**Modo de trabalho atual:** a IA entrega blocos completos (arquivos prontos), explica brevemente e diz como testar. Sem push nem publicação sem confirmação do dono.
+**Decisões aprovadas:** `docs/decisions.md`. **Regras para a IA:** `AGENTS.md`. **Referência visual medida:** `docs/referencia-visual.md`.
+**Modo de trabalho:** a IA entrega blocos completos (arquivos prontos em zip), explica brevemente e diz como testar. Roda lint, testes e build no ambiente dela e diz o que não conseguiu verificar. Sem push nem publicação sem confirmação do dono. Cada bloco vai para um chat novo; este arquivo e o zip do projeto são a ponte.
 
-## Concluído
-- Ambiente validado (Node 24, npm 11, Git), projeto Vite criado, repositório Git local iniciado em `main`.
-- **Bloco 1** (moldura): gerado e entregue.
-- **Bloco 2 gerado** (páginas): Início, Sobre, rota `/projetos/:nome` com aba própria, botões e etiquetas reutilizáveis, título da página do navegador. Dados dos repositórios ainda não existem (Bloco 3).
+## Concluído e conferido pelo dono (26/10)
+- Ambiente (Node 24, npm 11, Git), projeto Vite, repositório ligado ao GitHub (`origin`).
+- **Bloco 1** (moldura: barra de ícones, explorador, abas fecháveis, barra de status, tema, rotas, vercel.json) e **Bloco 2** (Início, Sobre, rota `/projetos/:nome` com aba, Button, TagList, título da página).
+- No computador do dono: `npm run lint` sem erros, `npm test` com 13 testes passando, `npm run dev` funcionando, interface conferida no navegador.
 
-## Arquivos do Bloco 1
-`index.html`, `vercel.json`, `AGENTS.md`, `docs/*`, `src/main.jsx`, `src/App.jsx`, `src/routes/AppRoutes.jsx`,
-`src/config/{navigation,portfolio}.js`, `src/context/{Theme,Tabs}{Context.js,Provider.jsx}`,
-`src/hooks/{useTheme,useTabs}.js`, `src/utils/tabsReducer.js`, `src/styles/{tokens,global}.css`,
-`src/components/layout/*` (AppShell, ActivityBar, Sidebar, TabBar, StatusBar), `src/components/ui/*`, `src/pages/*`.
-Dependências novas: `react-router-dom` (rotas), `vitest` (testes, dev).
+## Estado do Git
+Alterações dos Blocos 1 e 2 estavam **sem commit**. Commits sugeridos na branch `feature/layout-shell`: `docs: adiciona AGENTS.md e documentação do projeto` e `feat: adiciona moldura estilo VS Code, páginas e rota de projeto`. Confirmar com `git log --oneline`. Nenhum push feito ainda.
 
-## Testes
-`npm test`: 13 testes (lógica das abas e da navegação, incluindo rota de projeto). Ainda não há testes de formulário nem de dashboard.
-
-## Problemas conhecidos / pendências
-- Paleta provisória: ajustar com as capturas da referência.
-- Fonte monoespaçada: ainda a do sistema; decidir arquivo próprio no bloco de performance.
-- `src/config/profile.js`: o dono precisa preencher `name` e revisar cada frase (só fatos verdadeiros). Os campos com TODO pedem o que ele fez no SpaceLaunch Optimizer.
+## Pendências
+- **Ajuste visual** pela referência (paleta, barra de status escura, destaque coral, breadcrumb, home em formato hero): ver `docs/referencia-visual.md`.
+- **Publicação e qualidade:** push, pull request, Vercel (deploy automático), Prettier, Husky + lint-staged, GitHub Actions (lint, teste, build), proteção da `main`.
+- `src/config/profile.js`: o dono precisa preencher `name` e revisar as frases (só fatos verdadeiros); campos com TODO.
 - Home, Projetos e detalhe têm avisos provisórios até o Bloco 3.
-- Pendentes do setup: Prettier, Husky + lint-staged, GitHub Actions, proteção da `main`, remote do GitHub (`origin`) e conexão com a Vercel.
-- O repositório no GitHub se chama `Portif-lio-vscode` (o GitHub tirou os acentos). Se renomear, mudar `repoName` em `src/config/portfolio.js`.
+- Fonte monoespaçada ainda é a do sistema (decidir no bloco de performance).
+- O repositório se chama `Portif-lio-vscode`; se renomear, mudar `repoName` em `src/config/portfolio.js`.
 
-## Próximo passo
-Bloco 3: API do GitHub (sem forks e sem o repositório do portfólio), TanStack Query, cards com skeleton, erro e lista vazia, detalhe do projeto com dados reais.
+## Próximos passos
+1. Ajuste visual + publicação inicial (Vercel, Prettier, Husky, CI).
+2. Bloco 3: API do GitHub (sem forks e sem o repo do portfólio), TanStack Query, skeleton/erro/vazio, detalhe com dados reais. Precisa dos nomes exatos dos repositórios.
+3. Bloco 4: formulário de contato (Supabase + EmailJS). 4. Bloco 5: login e dashboard. 5. Bloco 6: performance (Lighthouse mobile ≥ 80), README, vídeo.
