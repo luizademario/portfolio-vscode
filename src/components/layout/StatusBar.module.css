@@ -5,6 +5,7 @@
   justify-content: space-between;
   min-width: 0;
   background: var(--bg-status);
+  border-top: 1px solid var(--border-status);
   color: var(--fg-status);
   font-size: 12px;
 }
