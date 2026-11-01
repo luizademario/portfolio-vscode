@@ -6,7 +6,7 @@ import { usePageTitle } from '../hooks/usePageTitle.js'
 
 function Sobre() {
   usePageTitle('Sobre')
-  const { education, highlight } = profile
+  const { education } = profile
 
   return (
     <PageContainer title="Sobre">
@@ -21,11 +21,6 @@ function Sobre() {
 
       <h2>Tecnologias que estudo e uso</h2>
       <TagList items={profile.technologies} />
-
-      <h2>{highlight.title}</h2>
-      {highlight.text.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
-      ))}
 
       <h2>Contato</h2>
       <Button to="/contato">Enviar uma mensagem</Button>

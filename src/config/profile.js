@@ -11,12 +11,4 @@ export const profile = {
   ],
   education: { course: 'Engenharia de Software', school: 'FIAP', period: '2º semestre' },
   technologies: ['JavaScript', 'React', 'Vite', 'Node.js', 'Git', 'GitHub', 'Vercel'],
-  highlight: {
-    title: 'SpaceLaunch Optimizer',
-    // TODO: acrescente o que VOCÊ fez no projeto e as tecnologias usadas.
-    text: [
-      'Projeto acadêmico da FIAP relacionado à otimização de lançamentos espaciais.',
-      'Na avaliação da Global Solution ligada a ele, tirei notas próximas de 10 em quase todos os critérios.',
-    ],
-  },
 }

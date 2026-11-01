@@ -10,23 +10,24 @@
 - **Blocos 1 e 2** (moldura, abas, tema, Início, Sobre, rota `/projetos/:nome`, Button, TagList) integrados na `main`.
 - **Publicação (conferido pelo dono):** Vercel com deploy automático a cada push na `main`; F5 em `/sobre` sem 404.
 - **Qualidade (conferido pelo dono):** Prettier, Husky + lint-staged (hook visto funcionando no commit), GitHub Actions verde (CI #2). LF fixado após o CI #1 reprovar por CRLF.
-- **Ajuste visual (entregue pela IA, ainda não conferido pelo dono):** paleta escura medida, barra de status escura com contador decorativo, indicador coral, `Breadcrumb`, Home em hero. Verificado no ambiente da IA: lint, `format:check`, 16 testes e build. **Não verificado:** aparência no navegador, celular e tema claro.
+- **Ajuste visual (conferido pelo dono):** paleta escura medida, barra de status escura com contador decorativo, indicador coral, `Breadcrumb`, Home em hero. Verificado no ambiente da IA: lint, `format:check`, 16 testes e build.
 
 ## Estado do Git
 
-Branches integradas: `feature/layout-shell`, `chore/qualidade`, `fix/formatacao-ci`. Próxima branch sugerida: `feature/ajuste-visual` (commit: `feat: aplica paleta da referência, breadcrumb e home em hero`).
+Branches integradas: `feature/layout-shell`, `chore/qualidade`, `fix/formatacao-ci`, `feature/ajuste-visual`. Próxima branch: `feature/github-api` (commit: `feat: lista repositórios do GitHub com tópico portfolio`).
+
+- **Bloco 3 (entregue pela IA, ainda não conferido pelo dono):** API do GitHub com TanStack Query, `RepoList`/`RepoCard`/`RepoCardSkeleton`/`StatusMessage`, página de detalhes pelo cache, destaques provisórios na Home, seção de destaque removida de Sobre. Verificado no ambiente da IA: lint, `format:check`, 52 testes e build. **Não verificado:** resposta real da API (limite de requisições no ambiente da IA), aparência no navegador, tópicos nos repositórios.
 
 ## Pendências
 
-- Conferir o ajuste visual no navegador (escuro, claro, celular) e ajustar o que destoar.
+- Adicionar o tópico `portfolio` nos repositórios `novo-tv-time` e `Vinheria_Agnello` no GitHub; sem ele a lista aparece vazia.
+- Confirmar na resposta real da API que `topics` vem na listagem (se não vier, o site mostra o erro "Resposta inesperada" e é preciso trocar a abordagem).
 - `src/config/profile.js`: o dono precisa preencher `name` e revisar as frases (só fatos verdadeiros).
-- Regra de proteção da `main` no GitHub (bloquear exclusão e force push); commitlint opcional.
-- Home, Projetos e detalhe têm avisos provisórios até o Bloco 3.
+- Commitlint (opcional); repositório público antes da entrega.
 - Fonte monoespaçada ainda é a do sistema (decidir no bloco de performance).
 - Opcional: barra de menu decorativa, ícones de arquivo coloridos, `.env.example`, README.
 
 ## Próximos passos
 
-1. Conferir e integrar o ajuste visual.
-2. Bloco 3: API do GitHub (sem forks e sem o repo do portfólio), TanStack Query, skeleton/erro/vazio, detalhe com dados reais. Precisa dos nomes exatos dos repositórios.
-3. Bloco 4: formulário de contato (Supabase + EmailJS). 4. Bloco 5: login e dashboard. 5. Bloco 6: performance (Lighthouse mobile ≥ 80), README, vídeo.
+1. Conferir e integrar o Bloco 3.
+2. Bloco 4: formulário de contato (Supabase + EmailJS). 3. Bloco 5: login e dashboard (escolha definitiva dos destaques). 4. Bloco 6: performance (Lighthouse mobile ≥ 80), README, vídeo.

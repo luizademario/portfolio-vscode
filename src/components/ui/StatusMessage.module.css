@@ -1,0 +1,30 @@
+.box {
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-radius: 2px;
+  background: var(--bg-sidebar);
+}
+
+.error {
+  border-left-color: var(--accent);
+}
+
+.info {
+  border-left-color: var(--fg-muted);
+}
+
+.title {
+  margin: 0 0 4px;
+  font-weight: 600;
+  color: var(--fg-primary);
+}
+
+.text {
+  margin: 0 0 12px;
+  color: var(--fg-muted);
+}
+
+.box > :last-child {
+  margin-bottom: 0;
+}

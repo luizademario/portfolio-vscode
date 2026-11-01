@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom'
+import RepoList from '../components/repos/RepoList.jsx'
 import Button from '../components/ui/Button.jsx'
 import { portfolio } from '../config/portfolio.js'
 import { profile } from '../config/profile.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import { usePortfolioRepos } from '../hooks/usePortfolioRepos.js'
 import styles from './Home.module.css'
 
 // Home em formato hero: tudo vem de config/profile.js (nada de texto fixo aqui).
 function Home() {
   usePageTitle('')
+  const { data, isPending, error, refetch } = usePortfolioRepos()
 
   return (
     <div className={styles.page}>
@@ -42,7 +45,14 @@ function Home() {
 
       <section className={styles.featured}>
         <h2>Projetos em destaque</h2>
-        <p>Os destaques serão carregados do GitHub no próximo bloco.</p>
+        <RepoList
+          repos={data}
+          isLoading={isPending}
+          error={error}
+          onRetry={refetch}
+          limit={portfolio.featuredCount}
+          emptyText="Nenhum projeto em destaque por enquanto."
+        />
       </section>
     </div>
   )
