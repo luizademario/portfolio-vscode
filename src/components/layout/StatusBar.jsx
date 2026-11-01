@@ -17,6 +17,15 @@ function StatusBar() {
           <Icon name="branch" size={14} />
           <span>main</span>
         </a>
+        <span
+          className={`${styles.item} ${styles.hideOnMobile}`}
+          title="Erros e avisos (decorativo)"
+        >
+          <Icon name="error" size={14} />
+          <span>0</span>
+          <Icon name="warning" size={14} />
+          <span>0</span>
+        </span>
       </div>
       <div className={styles.group}>
         <span className={`${styles.item} ${styles.hideOnMobile}`}>JavaScript</span>

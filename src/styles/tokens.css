@@ -1,5 +1,5 @@
-/* Cores e medidas do visual. Paleta PROVISÓRIA baseada nos temas padrão do VS Code
-   (Dark+ e Light+); será ajustada com as capturas da referência.
+/* Cores e medidas do visual. O tema escuro segue a paleta medida da referência
+   (docs/referencia-visual.md); cores de aba inativa, hover e tema claro foram escolhidas à mão.
    Nenhum componente usa cor fixa: tudo vem destas variáveis. */
 :root {
   --font-mono: 'Cascadia Code', Consolas, 'SF Mono', Menlo, 'Liberation Mono', monospace;
@@ -8,25 +8,30 @@
   --sidebar-w: 250px;
   --status-h: 24px;
   --tab-h: 36px;
+  --breadcrumb-h: 26px;
 
   color-scheme: dark;
-  --bg-editor: #1e1e1e;
-  --bg-sidebar: #252526;
-  --bg-activity: #333333;
-  --bg-tab-bar: #252526;
-  --bg-tab: #2d2d2d;
-  --bg-hover: #2a2d2e;
-  --bg-selected: #37373d;
-  --bg-status: #007acc;
-  --fg-status: #ffffff;
-  --fg-primary: #d4d4d4;
-  --fg-muted: #9d9d9d;
-  --fg-activity: #858585;
-  --fg-activity-active: #ffffff;
-  --border: #3c3c3c;
-  --accent: #4fc1ff;
-  --accent-warm: #ce9178;
-  --focus: #3794ff;
+  --bg-editor: #24292e;
+  --bg-sidebar: #1f2428;
+  --bg-activity: #24292e;
+  --bg-tab-bar: #1f2428;
+  --bg-tab: #1f2428;
+  --bg-hover: #2a2f35;
+  --bg-selected: #2f353b;
+  --bg-button: #2f3236;
+  --bg-status: #24292e;
+  --fg-status: #9e9fa1;
+  --fg-primary: #efefef;
+  --fg-muted: #9e9fa1;
+  --fg-activity: #8b949e;
+  --fg-activity-active: #efefef;
+  --border: #161a1d;
+  --border-status: #161a1d;
+  --accent: #f9826c;
+  --accent-warm: #f9826c;
+  --on-accent: #1f2428;
+  --activity-indicator: #f9826c;
+  --focus: #f9826c;
 }
 
 :root[data-theme='light'] {
@@ -38,6 +43,7 @@
   --bg-tab: #ececec;
   --bg-hover: #e8e8e8;
   --bg-selected: #e4e6f1;
+  --bg-button: #e8e8e8;
   --bg-status: #007acc;
   --fg-status: #ffffff;
   --fg-primary: #3b3b3b;
@@ -45,7 +51,10 @@
   --fg-activity: #c5c5c5;
   --fg-activity-active: #ffffff;
   --border: #d4d4d4;
+  --border-status: #007acc;
   --accent: #0451a5;
   --accent-warm: #b5481c;
+  --on-accent: #ffffff;
+  --activity-indicator: #ffffff;
   --focus: #005fb8;
 }

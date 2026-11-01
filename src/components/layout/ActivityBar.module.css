@@ -39,8 +39,8 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 2px;
-  background: var(--fg-activity-active);
+  width: 3px;
+  background: var(--activity-indicator);
 }
 
 @media (max-width: 767px) {

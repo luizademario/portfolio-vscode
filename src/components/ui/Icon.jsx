@@ -32,6 +32,18 @@ const shapes = {
   ),
   menu: <path d="M4 6h16M4 12h16M4 18h16" />,
   close: <path d="M6 6l12 12M18 6 6 18" />,
+  error: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m9 9 6 6M15 9l-6 6" />
+    </>
+  ),
+  warning: (
+    <>
+      <path d="M12 4 2.5 20h19z" />
+      <path d="M12 10v4M12 17.5v.01" />
+    </>
+  ),
   chevron: <path d="m6 9 6 6 6-6" />,
 }
 

@@ -1,0 +1,22 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 6px;
+  height: var(--breadcrumb-h);
+  padding: 0 16px;
+  overflow: hidden;
+  background: var(--bg-editor);
+  color: var(--fg-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.current {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.separator {
+  opacity: 0.7;
+}

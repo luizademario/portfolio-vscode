@@ -10,8 +10,8 @@
 }
 
 .primary {
-  background: var(--bg-status);
-  color: var(--fg-status);
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 .primary:hover {
@@ -20,7 +20,7 @@
 
 .secondary {
   border-color: var(--border);
-  background: transparent;
+  background: var(--bg-button);
   color: var(--fg-primary);
 }
 

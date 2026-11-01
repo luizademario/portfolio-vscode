@@ -34,19 +34,21 @@ Dono: estudante iniciante de Engenharia de Software. Ele precisa entender e expl
 
 ## Git
 
-- Branch por funcionalidade: `feature/...`, `fix/...`, `docs/...`, `chore/...`, `perf/...`; integração à `main` por pull request.
+- Branch por funcionalidade: `feature/...`, `fix/...`, `docs/...`, `chore/...`, `perf/...`. Trabalho individual: integração à `main` por `git merge --no-ff` (pull request é opcional; decisão D20).
 - Commits no padrão Conventional Commits, em português: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`, `ci:`, `perf:`.
   Exemplo: `feat: adiciona barra de abas com fechamento`.
 - Commits só depois de o bloco ser verificado. Nada de push ou publicação sem o dono confirmar.
+- Finais de linha: LF (`.gitattributes` e Prettier).
 - Nunca versionar `.env`; manter `.env.example` atualizado.
 
 ## Definição de pronto (rodar e informar a saída real)
 
 1. `npm run lint` sem erros.
-2. `npm test` passando.
-3. `npm run build` concluindo.
-4. Teste manual descrito para o dono.
-   Verificações automáticas **ainda não implantadas**: Prettier, Husky/lint-staged, commitlint e GitHub Actions. Quando entrarem, atualizar esta seção.
+2. `npm run format:check` aprovado (`npm run format` corrige).
+3. `npm test` passando.
+4. `npm run build` concluindo.
+5. Teste manual descrito para o dono.
+   Automáticas já implantadas: Prettier + ESLint antes de cada commit (Husky + lint-staged) e GitHub Actions (lint, formatação, testes e build a cada push na `main`). **Ainda não implantados:** commitlint e proteção da `main` por regra no GitHub.
 
 ## Honestidade
 

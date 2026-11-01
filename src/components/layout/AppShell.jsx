@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import Breadcrumb from './Breadcrumb.jsx'
 import ActivityBar from './ActivityBar.jsx'
 import Sidebar from './Sidebar.jsx'
 import StatusBar from './StatusBar.jsx'
@@ -50,6 +51,7 @@ function AppShell() {
 
       <div className={styles.main}>
         <TabBar drawerOpen={drawerOpen} onToggleDrawer={() => setDrawerOpen((open) => !open)} />
+        <Breadcrumb />
         <main id="conteudo" className={styles.content} ref={contentRef} tabIndex={-1}>
           <Outlet />
         </main>
