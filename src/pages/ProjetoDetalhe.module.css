@@ -1,0 +1,14 @@
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 16px;
+  margin: 0 0 16px;
+}
+
+.facts dt {
+  color: var(--fg-muted);
+}
+
+.facts dd {
+  margin: 0;
+}

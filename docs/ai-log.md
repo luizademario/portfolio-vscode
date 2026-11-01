@@ -12,3 +12,14 @@ Regra: registrar só o que aconteceu de fato. Campos entre [colchetes] são pree
 - **Verificações do dono:** [colar aqui o resultado do lint, dos testes e do teste manual].
 - **Corrigido durante o trabalho:** [anotar erros que aparecerem e como foram resolvidos].
 - **O que aprendi / sei explicar:** [responder com as suas palavras].
+
+### Publicação, qualidade e ajuste visual (30–31/10/2026)
+
+**Pedido:** publicar na Vercel com deploy automático, automatizar qualidade e aplicar a referência visual.
+**O que a IA fez:** conduziu push, merge e Vercel em etapas; gerou Prettier, Husky, lint-staged e o workflow de CI; depois da falha do CI #1 diagnosticou o final de linha e propôs LF; aplicou paleta, barra de status escura, breadcrumb e home em hero.
+
+- **Verificações da IA (ambiente dela):** lint, format:check, 16 testes e build passando; lint-staged testado em repositório temporário.
+- **Não verificado pela IA:** aparência no navegador, celular, tema claro, proteção da main.
+- **Verificações do dono:** deploy automático e F5 em /sobre sem 404, CI #2 verde, hook do Husky no commit. [colar o resultado do teste manual do ajuste visual]
+- **Corrigido durante o trabalho:** CI #1 reprovou 7 arquivos no format:check por CRLF do Windows; corrigido com LF (.gitattributes + Prettier). Um bloco lint-staged duplicado entrou no package.json e o arquivo .lintstagedrc.json foi removido.
+- **O que aprendi / sei explicar:** [escrever com as suas palavras]
