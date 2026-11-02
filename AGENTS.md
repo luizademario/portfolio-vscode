@@ -12,6 +12,8 @@ Dono: estudante iniciante de Engenharia de Software. Ele precisa entender e expl
 - Vitest + Testing Library, ESLint, Prettier. Deploy na Vercel.
 - Testes: Vitest; de tela com Testing Library + jsdom (`// @vitest-environment jsdom` no topo do arquivo). Fixtures da API em `src/test/`.
 - Projetos do site: só repositórios públicos, não fork, com o tópico definido em `config/portfolio.js` (D6). Nunca escrever nomes de projetos no código.
+- Segredos: só em `.env` (fora do Git). Variáveis `VITE_*` são públicas no navegador: nunca colocar `service_role` nem chaves privadas. Manter `.env.example` igual às variáveis usadas em `src/config/env.js`.
+- Formulários: validação em função pura em `src/utils`, lógica em hook, componente só apresenta; botão de envio bloqueado enquanto envia.
 - Não adicionar dependência sem explicar para que serve e receber aprovação.
 
 ## Estrutura e responsabilidades

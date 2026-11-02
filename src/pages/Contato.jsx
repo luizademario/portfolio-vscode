@@ -1,3 +1,4 @@
+import ContactForm from '../components/contact/ContactForm.jsx'
 import PageContainer from '../components/ui/PageContainer.jsx'
 import { usePageTitle } from '../hooks/usePageTitle.js'
 
@@ -6,7 +7,8 @@ function Contato() {
 
   return (
     <PageContainer title="Contato">
-      <p>O formulário de contato entra no Bloco 4.</p>
+      <p>Deixe uma mensagem pelo formulário. Todos os campos são obrigatórios.</p>
+      <ContactForm />
     </PageContainer>
   )
 }
