@@ -12,7 +12,7 @@
 - **Qualidade (conferido pelo dono):** Prettier, Husky + lint-staged (hook visto funcionando no commit), GitHub Actions verde (CI #2). LF fixado após o CI #1 reprovar por CRLF.
 - **Ajuste visual (conferido pelo dono):** paleta escura medida, barra de status escura com contador decorativo, indicador coral, `Breadcrumb`, Home em hero. Verificado no ambiente da IA: lint, `format:check`, 16 testes e build.
 
-- **Bloco 4 (entregue pela IA, falta configurar os serviços e conferir):** formulário de contato com validação por campo, esqueleto de envio com spinner e botão bloqueado, salvamento no Supabase (REST) e e-mail pelo EmailJS (REST), anti-spam em camadas, `.env.example`, `supabase/01-contact-messages.sql`. Verificado no ambiente da IA: lint, `format:check`, 88 testes e build. **Não verificado:** Supabase e EmailJS reais, aparência no navegador.
+- **Bloco 4 (entregue pela IA, conferido pelo dono em produção):** formulário de contato com validação por campo, esqueleto de envio com spinner e botão bloqueado, salvamento no Supabase (REST) e e-mail pelo EmailJS (REST), anti-spam em camadas, `.env.example`, `supabase/01-contact-messages.sql`. Verificado no ambiente da IA: lint, `format:check`, 88 testes e build.
 
 ## Estado do Git
 
@@ -22,7 +22,6 @@ Branches integradas: `feature/layout-shell`, `chore/qualidade`, `fix/formatacao-
 
 ## Pendências
 
-- Configurar o Supabase (tabela e política) e o EmailJS (serviço e template), preencher o `.env` e as variáveis na Vercel, e testar o envio real.
 - `src/config/profile.js`: o dono precisa preencher `name` e revisar as frases (só fatos verdadeiros).
 - Commitlint (opcional); repositório público antes da entrega.
 - Fonte monoespaçada ainda é a do sistema (decidir no bloco de performance).
