@@ -12,22 +12,24 @@
 - **Qualidade (conferido pelo dono):** Prettier, Husky + lint-staged (hook visto funcionando no commit), GitHub Actions verde (CI #2). LF fixado após o CI #1 reprovar por CRLF.
 - **Ajuste visual (conferido pelo dono):** paleta escura medida, barra de status escura com contador decorativo, indicador coral, `Breadcrumb`, Home em hero. Verificado no ambiente da IA: lint, `format:check`, 16 testes e build.
 
+- **Bloco 4 (entregue pela IA, falta configurar os serviços e conferir):** formulário de contato com validação por campo, esqueleto de envio com spinner e botão bloqueado, salvamento no Supabase (REST) e e-mail pelo EmailJS (REST), anti-spam em camadas, `.env.example`, `supabase/01-contact-messages.sql`. Verificado no ambiente da IA: lint, `format:check`, 88 testes e build. **Não verificado:** Supabase e EmailJS reais, aparência no navegador.
+
 ## Estado do Git
 
-Branches integradas: `feature/layout-shell`, `chore/qualidade`, `fix/formatacao-ci`, `feature/ajuste-visual`. Próxima branch: `feature/github-api` (commit: `feat: lista repositórios do GitHub com tópico portfolio`).
+Branches integradas: `feature/layout-shell`, `chore/qualidade`, `fix/formatacao-ci`, `feature/ajuste-visual`. Branches integradas também: `feature/github-api` (confirmar o merge). Próxima branch: `feature/contato` (commit: `feat: adiciona formulário de contato com Supabase e EmailJS`).
 
-- **Bloco 3 (entregue pela IA, ainda não conferido pelo dono):** API do GitHub com TanStack Query, `RepoList`/`RepoCard`/`RepoCardSkeleton`/`StatusMessage`, página de detalhes pelo cache, destaques provisórios na Home, seção de destaque removida de Sobre. Verificado no ambiente da IA: lint, `format:check`, 52 testes e build. **Não verificado:** resposta real da API (limite de requisições no ambiente da IA), aparência no navegador, tópicos nos repositórios.
+- **Bloco 3 (conferido pelo dono, inclusive o erro 403 simulado e os tópicos reais):** API do GitHub com TanStack Query, `RepoList`/`RepoCard`/`RepoCardSkeleton`/`StatusMessage`, página de detalhes pelo cache, destaques provisórios na Home, seção de destaque removida de Sobre.
 
 ## Pendências
 
-- Adicionar o tópico `portfolio` nos repositórios `novo-tv-time` e `Vinheria_Agnello` no GitHub; sem ele a lista aparece vazia.
-- Confirmar na resposta real da API que `topics` vem na listagem (se não vier, o site mostra o erro "Resposta inesperada" e é preciso trocar a abordagem).
+- Configurar o Supabase (tabela e política) e o EmailJS (serviço e template), preencher o `.env` e as variáveis na Vercel, e testar o envio real.
 - `src/config/profile.js`: o dono precisa preencher `name` e revisar as frases (só fatos verdadeiros).
 - Commitlint (opcional); repositório público antes da entrega.
 - Fonte monoespaçada ainda é a do sistema (decidir no bloco de performance).
-- Opcional: barra de menu decorativa, ícones de arquivo coloridos, `.env.example`, README.
+- Opcional: barra de menu decorativa, ícones de arquivo coloridos, README.
 
 ## Próximos passos
 
-1. Conferir e integrar o Bloco 3.
-2. Bloco 4: formulário de contato (Supabase + EmailJS). 3. Bloco 5: login e dashboard (escolha definitiva dos destaques). 4. Bloco 6: performance (Lighthouse mobile ≥ 80), README, vídeo.
+1. Configurar os serviços e conferir o Bloco 4.
+2. Bloco 5: login e dashboard (mensagens, marcar como respondida, destaques da Home). Libera leitura e atualização na tabela só para o dono logado.
+3. Bloco 6: performance (Lighthouse mobile ≥ 80), README, vídeo. Keep-alive do Supabase no fim (D4).

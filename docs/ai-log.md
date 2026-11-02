@@ -23,3 +23,23 @@ Regra: registrar só o que aconteceu de fato. Campos entre [colchetes] são pree
 - **Verificações do dono:** deploy automático e F5 em /sobre sem 404, CI #2 verde, hook do Husky no commit. [colar o resultado do teste manual do ajuste visual]
 - **Corrigido durante o trabalho:** CI #1 reprovou 7 arquivos no format:check por CRLF do Windows; corrigido com LF (.gitattributes + Prettier). Um bloco lint-staged duplicado entrou no package.json e o arquivo .lintstagedrc.json foi removido.
 - **O que aprendi / sei explicar:** [escrever com as suas palavras]
+
+### Bloco 3: integração com a API do GitHub (31/10/2026)
+
+**Pedido:** listar só repositórios públicos, sem fork, com o tópico "portfolio", usando TanStack Query, com skeleton, erro, lista vazia, detalhe e destaques na Home; remover o destaque de Sobre.
+**O que a IA fez:** service com erros tipados, filtro no cliente, hooks sobre uma chave de cache única, RepoCard/RepoCardSkeleton/RepoList/StatusMessage, detalhe lendo do cache, destaques provisórios, remoção do destaque em Sobre, correção do repoName.
+
+- **Verificações da IA (ambiente dela):** lint, format:check, 52 testes (17 repositórios simulados) e build passando.
+- **Não verificado pela IA:** a resposta real da API (limite de requisições no ambiente dela, então não confirmou que `topics` vem na listagem), o visual no navegador e no celular.
+- **Verificações do dono:** [colar: o comando do topics, a tela de projetos, o detalhe com F5, o erro offline]
+- **O que aprendi / sei explicar:** [escrever com as suas palavras]
+
+### Bloco 4: formulário de contato (31/10/2026)
+
+**Pedido:** formulário com validação por campo, Supabase, EmailJS, anti-spam e testes.
+**O que a IA fez:** validateContact (função pura), antiSpam, contactService (REST), useContactForm, ContactForm/FormField/Spinner, SQL com RLS só de inserção, .env.example, decisões D32–D38.
+
+- **Verificações da IA (ambiente dela):** lint, format:check, 88 testes e build passando.
+- **Não verificado pela IA:** Supabase e EmailJS reais, visual no navegador.
+- **Verificações do dono:** [colar: envio real, linha na tabela, e-mail recebido, erros de validação]
+- **O que aprendi / sei explicar:** [escrever com as suas palavras]

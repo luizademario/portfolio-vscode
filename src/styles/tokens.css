@@ -32,6 +32,7 @@
   --on-accent: #1f2428;
   --activity-indicator: #f9826c;
   --focus: #f9826c;
+  --error: #ff7b72;
 }
 
 :root[data-theme='light'] {
@@ -57,4 +58,5 @@
   --on-accent: #ffffff;
   --activity-indicator: #ffffff;
   --focus: #005fb8;
+  --error: #c5221f;
 }

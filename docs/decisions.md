@@ -35,6 +35,14 @@
 | D30 | Testing Library + jsdom para testar estados de tela (por arquivo, com `// @vitest-environment jsdom`) | Só testes de funções puras | Testa esqueleto, erro, lista vazia e cache de verdade | Duas dependências de desenvolvimento a mais |
 | D31 | Removida a seção de destaque da página Sobre e o campo `highlight` do `profile.js` | Manter | Decisão do dono: esse projeto sai do portfólio | Nenhum |
 
+| D32 | Validação manual do formulário, em função pura (`validateContact`) | React Hook Form + Zod/Yup | São 3 campos; zero dependência; fácil de testar e explicar | Sem esquema compartilhado nem as facilidades da biblioteca |
+| D33 | Salvar no Supabase pela API REST com `fetch` e a chave pública; `supabase-js` só no dashboard (Bloco 5), carregado sob demanda | `supabase-js` no formulário | Mantém o pacote inicial pequeno (meta de Lighthouse) | Código de requisição escrito à mão |
+| D34 | EmailJS pela API REST, sem o SDK | `@emailjs/browser`, Formspree | Sem dependência; a chave pública é feita para ficar no navegador | Limite do plano gratuito do EmailJS |
+| D35 | Ordem do envio: salva no banco; só depois manda o e-mail. Se o e-mail falhar, o visitante vê sucesso (a mensagem está salva) | E-mail primeiro; mostrar erro se o e-mail falhar | O banco é a fonte da verdade (D3); o dono lê tudo no dashboard | O dono pode não receber o aviso por e-mail |
+| D36 | Anti-spam em camadas: campo isca escondido, tempo mínimo de 2 s, intervalo de 60 s por navegador, limites de tamanho e RLS só de inserção no banco | Captcha (Turnstile), Edge Function com limite por IP | Simples e sem serviço extra | Não impede quem chama a API direto; o limite do EmailJS segura o pior caso |
+| D37 | Robô detectado (isca ou rapidez) recebe "sucesso" falso e nada é enviado | Mostrar erro | Não ensina o robô a se adaptar | Uma pessoa muito rápida seria ignorada; o mínimo de 20 caracteres torna isso improvável |
+| D38 | Variáveis `VITE_*` no `.env` (fora do Git) com `.env.example` versionado; só chaves públicas, nunca `service_role` | Chaves no código | Requisito do repositório e segurança | O navegador enxerga essas variáveis; a proteção real é a RLS |
+
 ## Pendências do setup
 
 Commitlint (opcional), regra de proteção da `main` no GitHub (bloquear exclusão e force push; depende do plano com o repositório privado), repositório público antes da entrega.

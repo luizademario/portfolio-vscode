@@ -1,0 +1,44 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--fg-primary);
+}
+
+.control {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg-sidebar);
+  color: var(--fg-primary);
+  font: inherit;
+}
+
+textarea.control {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.invalid {
+  border-color: var(--error);
+}
+
+.hint,
+.error {
+  margin: 0;
+  font-size: 12px;
+}
+
+.hint {
+  color: var(--fg-muted);
+}
+
+.error {
+  color: var(--error);
+}
