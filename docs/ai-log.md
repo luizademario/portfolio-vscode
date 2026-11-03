@@ -43,3 +43,13 @@ Regra: registrar só o que aconteceu de fato. Campos entre [colchetes] são pree
 - **Não verificado pela IA:** Supabase e EmailJS reais, visual no navegador.
 - **Verificações do dono:** [colar: envio real, linha na tabela, e-mail recebido, erros de validação]
 - **O que aprendi / sei explicar:** [escrever com as suas palavras]
+
+### Bloco 5: login e dashboard (31/10/2026)
+
+**Pedido:** login com Supabase Auth, rota /dashboard protegida, mensagens com "marcar como respondida", escolha dos destaques da Home, testes de acesso.
+**O que a IA fez:** serviços de auth/dashboard/destaques, RequireAuth, LoginForm, MessageList, FeaturedPicker, páginas Login e Dashboard em React.lazy, SQL com site_owner e is_owner() e RLS, decisões D39–D46.
+
+- **Verificações da IA (ambiente dela):** lint, format:check, 149 testes e build passando; pacote inicial ~102 kB gzip.
+- **Não verificado pela IA:** Supabase Auth real, políticas RLS reais, visual no navegador.
+- **Verificações do dono:** [colar: login, dashboard sem login, marcar respondida, destaques na Home, teste de RLS]
+- **O que aprendi / sei explicar:** [escrever com as suas palavras]

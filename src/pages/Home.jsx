@@ -4,13 +4,13 @@ import Button from '../components/ui/Button.jsx'
 import { portfolio } from '../config/portfolio.js'
 import { profile } from '../config/profile.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
-import { usePortfolioRepos } from '../hooks/usePortfolioRepos.js'
+import { useHomeProjects } from '../hooks/useFeatured.js'
 import styles from './Home.module.css'
 
 // Home em formato hero: tudo vem de config/profile.js (nada de texto fixo aqui).
 function Home() {
   usePageTitle('')
-  const { data, isPending, error, refetch } = usePortfolioRepos()
+  const { projects, isPending, error, refetch } = useHomeProjects()
 
   return (
     <div className={styles.page}>
@@ -46,11 +46,10 @@ function Home() {
       <section className={styles.featured}>
         <h2>Projetos em destaque</h2>
         <RepoList
-          repos={data}
+          repos={projects}
           isLoading={isPending}
           error={error}
           onRetry={refetch}
-          limit={portfolio.featuredCount}
           emptyText="Nenhum projeto em destaque por enquanto."
         />
       </section>

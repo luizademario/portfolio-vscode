@@ -7,6 +7,12 @@ export const pages = [
   { path: '/contato', file: 'contato.css', ext: 'css', title: 'Contato' },
 ]
 
+// Páginas do dono: têm aba e breadcrumb, mas não aparecem no explorador público.
+const hiddenPages = [
+  { path: '/login', file: 'login.json', ext: 'json', title: 'Login' },
+  { path: '/dashboard', file: 'dashboard.json', ext: 'json', title: 'Dashboard' },
+]
+
 // Página de um projeto: /projetos/<nome-do-repositorio>
 const projectRoute = /^\/projetos\/([^/]+)$/
 
@@ -27,7 +33,7 @@ function safeDecode(value) {
 export function getTabInfo(pathname) {
   const path = normalizePath(pathname)
 
-  const page = pages.find((item) => item.path === path)
+  const page = [...pages, ...hiddenPages].find((item) => item.path === path)
   if (page) return page
 
   const project = projectRoute.exec(path)
