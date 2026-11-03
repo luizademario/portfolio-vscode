@@ -1,11 +1,17 @@
 # AGENTS.md — instruções para a IA neste projeto
 
 Projeto: portfólio pessoal em React com visual inspirado no VS Code (trabalho CP3 da FIAP).
-Dono: estudante iniciante de Engenharia de Software. Ele precisa entender e explicar tudo o que for entregue.
+Dono e autor: Luiz Ademario, estudante de Engenharia de Software. Ele define os requisitos, participa das decisões, configura os serviços e valida o resultado. A IA é uma ferramenta de apoio: explica conceitos, compara alternativas, escreve e revisa código e testes e ajuda a diagnosticar erros. Tudo o que entra no projeto precisa ser algo que o dono consiga entender e explicar.
 
 > Estas regras são **instruções escritas**. Só são aplicadas automaticamente as verificações listadas em "Definição de pronto" que realmente existirem no repositório.
 
-## Stack aprovada (não mudar sem pedir)
+## Como a IA deve trabalhar com o dono
+
+- Quando a escolha for técnica (biblioteca, arquitetura, serviço), apresentar as alternativas, o que cada uma ganha e perde, e esperar a decisão do dono antes de implementar.
+- Explicar de forma que um estudante do 2º semestre consiga reproduzir a explicação depois.
+- Dar instruções objetivas e uma etapa por vez para configurar serviços externos; quem configura é o dono.
+
+## Stack aprovada pelo dono (não mudar sem combinar)
 
 - React + Vite, **JavaScript** (sem TypeScript), React Router, CSS Modules + variáveis CSS.
 - Supabase (banco + login), EmailJS (e-mail), TanStack Query (cache do GitHub, em uso desde o Bloco 3).
@@ -42,7 +48,7 @@ Dono: estudante iniciante de Engenharia de Software. Ele precisa entender e expl
 - Branch por funcionalidade: `feature/...`, `fix/...`, `docs/...`, `chore/...`, `perf/...`. Trabalho individual: integração à `main` por `git merge --no-ff` (pull request é opcional; decisão D20).
 - Commits no padrão Conventional Commits, em português: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`, `ci:`, `perf:`.
   Exemplo: `feat: adiciona barra de abas com fechamento`.
-- Commits só depois de o bloco ser verificado. Nada de push ou publicação sem o dono confirmar.
+- Commits só depois de o dono verificar o bloco. Commit, push, merge e publicação são feitos pelo dono; a IA sugere os comandos.
 - Finais de linha: LF (`.gitattributes` e Prettier).
 - Nunca versionar `.env`; manter `.env.example` atualizado.
 
@@ -53,14 +59,15 @@ Dono: estudante iniciante de Engenharia de Software. Ele precisa entender e expl
 3. `npm test` passando.
 4. `npm run build` concluindo.
 5. Teste manual descrito para o dono.
-   Automáticas já implantadas: Prettier + ESLint antes de cada commit (Husky + lint-staged) e GitHub Actions (lint, formatação, testes e build a cada push na `main`). **Ainda não implantados:** commitlint e proteção da `main` por regra no GitHub.
+   Automáticas já implantadas: Prettier + ESLint antes de cada commit (Husky + lint-staged) e GitHub Actions (lint, formatação, testes e build a cada push na `main`). A `main` tem regra de proteção no GitHub (bloqueia exclusão e push forçado). **Ainda não implantado:** commitlint.
 
 ## Honestidade
 
 - Não afirmar que testou, publicou ou verificou algo sem evidência. Dizer o que não consegue verificar (ex.: ver o navegador).
 - Não inventar projetos, experiências ou resultados do dono. Textos pessoais vêm dele.
 - Não alterar arquivos ou dependências além do necessário para o bloco atual.
-- Atualizar `docs/decisions.md`, `docs/ai-log.md` e `docs/CONTEXTO-ATUAL.md` ao fim de cada bloco.
+- Ao fim de cada bloco, a IA redige as entradas de `docs/decisions.md`, `docs/ai-log.md` e `docs/CONTEXTO-ATUAL.md` e o dono revisa e completa (principalmente as verificações dele e o campo "o que aprendi").
+- No `docs/ai-log.md`, registrar com clareza o que a IA gerou e o que o dono decidiu, configurou e verificou, sem exagerar nem esconder nenhum dos dois.
 
 ## Requisitos obrigatórios da FIAP
 

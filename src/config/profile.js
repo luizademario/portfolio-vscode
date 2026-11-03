@@ -3,7 +3,7 @@
 // Os textos abaixo usam apenas o que você me contou; revise cada frase.
 export const profile = {
   // TODO: coloque seu nome completo. Enquanto estiver vazio, a home mostra só "Portfólio".
-  name: '',
+  name: 'Luiz Ademario Soares De Oliveira Filho',
   headline: 'Estudante de Engenharia de Software na FIAP',
   summary: [
     'Estou no 2º semestre do curso, levo os estudos a sério e gosto de aprender.',
