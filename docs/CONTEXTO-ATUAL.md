@@ -13,18 +13,16 @@
 - **Ajuste visual (conferido pelo dono):** paleta escura medida, barra de status escura com contador decorativo, indicador coral, `Breadcrumb`, Home em hero.
 - **Bloco 3 (conferido pelo dono, inclusive o erro 403 simulado e os tópicos reais):** API do GitHub com TanStack Query, `RepoList`/`RepoCard`/`RepoCardSkeleton`/`StatusMessage`, página de detalhes pelo cache, destaques provisórios na Home (repositórios com o tópico `portfolio`), seção de destaque removida de Sobre.
 - **Bloco 4 (conferido pelo dono em produção):** formulário de contato com validação por campo, spinner e botão bloqueado, salvamento no Supabase (REST) e e-mail pelo EmailJS (REST), anti-spam em camadas. Tabela `contact_messages` com RLS: o visitante só insere; a consulta pública devolve HTTP 200 e `[]` mesmo com mensagens salvas. Variáveis na Vercel configuradas.
-- **Bloco 5 (entregue pela IA, falta configurar o Supabase e conferir):** login com Supabase Auth (`/login`), `/dashboard` protegido (`RequireAuth`), lista de mensagens com "marcar como respondida", escolha dos destaques da Home (tabela `featured_projects`), `supabase/02-dashboard.sql` com políticas ligadas ao dono. Rotas e `supabase-js` carregados sob demanda (pacote inicial ~102 kB gzip). Verificado no ambiente da IA: lint, `format:check`, 149 testes e build. **Não verificado:** Supabase Auth real, as políticas RLS reais, o visual no navegador.
+- **Bloco 5 (conferido pelo dono):** login com Supabase Auth (`/login`, cadastro público desligado), `/dashboard` protegido (`RequireAuth`), lista de mensagens com "marcar como respondida", escolha dos destaques da Home (tabela `featured_projects`) e políticas RLS ligadas ao dono (`supabase/02-dashboard.sql`, UUID do dono só no Supabase). Rotas e `supabase-js` carregados sob demanda (pacote inicial ~102 kB gzip). O dono confirmou o acesso sem login, o login, as mensagens, os destaques, o sair e os testes de segurança com a chave pública.
 - Verificação automática atual: lint, `format:check`, 149 testes e build passando.
 
 ## Estado do Git
 
-Branches integradas na `main`: `feature/layout-shell`, `chore/qualidade`, `fix/formatacao-ci`, `feature/ajuste-visual`, `feature/github-api`, `feature/contato`. Branch atual: `feature/dashboard` (Bloco 5).
+Branches integradas na `main`: `feature/layout-shell`, `chore/qualidade`, `fix/formatacao-ci`, `feature/ajuste-visual`, `feature/github-api`, `feature/contato`. Branches integradas também: `feature/dashboard` (confirmar o merge e o CI verde). Próxima branch: `feature/performance-readme` (Bloco 6).
 
 ## Pendências
 
-- Configurar o Supabase para o Bloco 5: criar o usuário do dono, desligar o cadastro público e rodar `supabase/02-dashboard.sql`; depois testar login, mensagens e destaques.
-
-- Apagar as mensagens de teste da tabela `contact_messages` (ou usar o dashboard para isso).
+- Apagar as mensagens de teste da tabela `contact_messages` pelo painel do Supabase (o dashboard não apaga, D43).
 - `src/config/profile.js`: o dono precisa preencher `name` e revisar as frases (só fatos verdadeiros).
 - Commitlint (opcional); repositório público antes da entrega.
 - Fonte monoespaçada ainda é a do sistema (decidir no bloco de performance).
@@ -32,5 +30,5 @@ Branches integradas na `main`: `feature/layout-shell`, `chore/qualidade`, `fix/f
 
 ## Próximos passos
 
-1. Configurar e conferir o Bloco 5.
-2. Bloco 6: Lighthouse mobile ≥ 80 (medir na URL publicada), imagens e layout estável, README completo, checklist da FIAP, keep-alive do Supabase (D4), vídeo.
+1. Bloco 6, em partes: (a) medir o Lighthouse mobile na URL publicada e corrigir o que ficar abaixo de 80; (b) conferir imagens, saltos de layout e requisições repetidas; (c) README completo; (d) checklist da FIAP item a item; (e) keep-alive do Supabase (D4); (f) roteiro do vídeo.
+2. Antes da entrega (03/11): repositório público, preencher `name` em `profile.js`, apagar mensagens de teste, conferir o histórico de commits e o `.env.example`.
