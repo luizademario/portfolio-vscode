@@ -43,6 +43,15 @@
 | D37 | Robô detectado (isca ou rapidez) recebe "sucesso" falso e nada é enviado | Mostrar erro | Não ensina o robô a se adaptar | Uma pessoa muito rápida seria ignorada; o mínimo de 20 caracteres torna isso improvável |
 | D38 | Variáveis `VITE_*` no `.env` (fora do Git) com `.env.example` versionado; só chaves públicas, nunca `service_role` | Chaves no código | Requisito do repositório e segurança | O navegador enxerga essas variáveis; a proteção real é a RLS |
 
+| D39 | Login com Supabase Auth, e-mail e senha, um único usuário criado à mão e cadastro público desligado | Link mágico por e-mail, login com GitHub | O mais simples de explicar e de testar; só o dono entra | Sem recuperação automática de senha (reset pelo painel do Supabase) |
+| D40 | `/login` e `/dashboard` carregadas sob demanda (`React.lazy`) e o `supabase-js` por `import()` | Tudo no pacote inicial | O visitante comum não baixa ~55 kB (gzip) que nunca usa; atende o requisito 8 | Primeiro acesso ao login tem um pequeno atraso |
+| D41 | Duas camadas de proteção: `RequireAuth` (navegação) e RLS no banco (dados) | Só o guarda da rota | O guarda do navegador pode ser contornado; a RLS é a proteção de verdade | Mais SQL para manter |
+| D42 | O dono é identificado pela tabela `site_owner` + função `is_owner()`; as políticas usam isso, não "qualquer usuário logado". O UUID não vai para o Git | Política `to authenticated` simples | Um cadastro acidental nunca abre as mensagens | Um passo a mais de configuração |
+| D43 | O dono só altera a coluna `answered` (permissão por coluna); o site não apaga mensagens | Permitir `update` e `delete` gerais | Menor superfície de erro; apagar fica no painel do Supabase | Para apagar é preciso ir ao Supabase |
+| D44 | Destaques da Home em tabela `featured_projects` (leitura pública, escrita só do dono). Sem nenhum marcado, ou se o banco falhar, a Home usa a lista provisória (D6) | Lista fixa no código | A escolha é feita no dashboard, sem mexer no código; a Home nunca quebra por causa do banco | Sem ordem manual: segue a ordem da lista do GitHub |
+| D45 | `login.json` e `dashboard.json` têm aba e breadcrumb, mas não aparecem no explorador | Listar no explorador | Área do dono não é divulgada no menu público | O dono precisa saber a URL `/login` |
+| D46 | Mensagens sem paginação, em cache do TanStack Query; "Sair" limpa o cache | Paginar | Volume baixo de mensagens | Muitas mensagens exigiriam paginação |
+
 ## Pendências do setup
 
 Commitlint (opcional), regra de proteção da `main` no GitHub (bloquear exclusão e force push; depende do plano com o repositório privado), repositório público antes da entrega.

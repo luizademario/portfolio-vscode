@@ -1,11 +1,21 @@
 // @vitest-environment jsdom
 import { cleanup, screen, waitFor } from '@testing-library/react'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { jsonResponse, reposDaConta, reposSemTopico } from '../test/githubFixtures.js'
+import { fetchFeaturedNames } from '../services/featuredService.js'
 import { renderWithProviders } from '../test/renderWithProviders.jsx'
 import Home from './Home.jsx'
 import ProjetoDetalhe from './ProjetoDetalhe.jsx'
 import Projetos from './Projetos.jsx'
+
+// A Home também lê os destaques do Supabase; nestes testes isso é simulado.
+vi.mock('../services/featuredService.js', () => ({
+  fetchFeaturedNames: vi.fn(),
+}))
+
+beforeEach(() => {
+  vi.mocked(fetchFeaturedNames).mockResolvedValue([])
+})
 
 afterEach(() => {
   cleanup()
@@ -78,6 +88,25 @@ describe('página inicial', () => {
 
     await screen.findByRole('link', { name: 'novo-tv-time' })
     expect(screen.getByRole('link', { name: 'Vinheria_Agnello' })).toBeTruthy()
+  })
+
+  it('mostra só os destaques escolhidos pelo dono', async () => {
+    vi.mocked(fetchFeaturedNames).mockResolvedValue(['Vinheria_Agnello'])
+    stubApi(() => jsonResponse(reposDaConta))
+    renderWithProviders(<Home />)
+
+    await screen.findByRole('link', { name: 'Vinheria_Agnello' })
+    expect(screen.queryByRole('link', { name: 'novo-tv-time' })).toBeNull()
+  })
+
+  it('usa a lista provisória quando os destaques não carregam', async () => {
+    vi.mocked(fetchFeaturedNames).mockRejectedValue(new Error('banco fora do ar'))
+    stubApi(() => jsonResponse(reposDaConta))
+    renderWithProviders(<Home />)
+
+    await screen.findByRole('link', { name: 'novo-tv-time' })
+    expect(screen.getByRole('link', { name: 'Vinheria_Agnello' })).toBeTruthy()
+    expect(screen.queryByRole('alert')).toBeNull()
   })
 
   it('mostra mensagem de lista vazia nos destaques', async () => {

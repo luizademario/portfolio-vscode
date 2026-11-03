@@ -5,6 +5,7 @@ const kinds = {
   md: { label: 'MD', color: '#519aba' },
   js: { label: 'JS', color: '#e5c07b' },
   css: { label: '#', color: '#c586c0' },
+  json: { label: '{}', color: '#e5c07b' },
 }
 
 function FileIcon({ ext }) {

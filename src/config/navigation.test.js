@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { getTabInfo, normalizePath } from './navigation.js'
+import { getTabInfo, normalizePath, pages } from './navigation.js'
 
 describe('normalizePath', () => {
   it('remove a barra final, exceto na raiz', () => {
@@ -12,6 +12,13 @@ describe('getTabInfo', () => {
   it('devolve o arquivo e o tipo da página conhecida', () => {
     expect(getTabInfo('/sobre')).toMatchObject({ file: 'sobre.md', ext: 'md' })
     expect(getTabInfo('/sobre/')).toMatchObject({ file: 'sobre.md' })
+  })
+
+  it('tem aba para login e dashboard, mas eles não aparecem no explorador', () => {
+    expect(getTabInfo('/dashboard')).toMatchObject({ file: 'dashboard.json' })
+    expect(getTabInfo('/login')).toMatchObject({ file: 'login.json' })
+    expect(pages.map((page) => page.path)).not.toContain('/dashboard')
+    expect(pages.map((page) => page.path)).not.toContain('/login')
   })
 
   it('devolve null para rota sem aba', () => {
